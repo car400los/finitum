@@ -1,0 +1,26 @@
+# Llaves secretas y variables de entorno (¡NUNCA SUBIR!)
+.env
+.env.local
+.env.*.local
+*.env
+
+# Dependencias de NodeJS (si usas React/Vue/Node)
+node_modules/
+dist/
+build/
+.next/
+
+# Dependencias de Flutter / Mobile (si aplica)
+.dart_tool/
+.packages
+build/
+ios/Flutter/Flutter.podspec
+html/
+
+# Archivos del sistema y editores
+.DS_Store
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
