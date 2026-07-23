@@ -11,3 +11,5 @@ A diferencia de los gestores de comunicación tradicionales, **Finitum** introdu
 *   **Control de Accesos (RBAC):** 
     *   `Manager`: Acceso global a todos los proyectos e historiales archivados.
     *   `Staff`: Acceso restringido únicamente a los canales de los proyectos en los que participan activamente.
+
+## ROADMAP
