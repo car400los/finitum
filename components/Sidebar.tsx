@@ -6,7 +6,7 @@ interface SidebarProps {
 }
 
 const navItems = [
-  { label: "Dashboard", href: "/", key: "dashboard" },
+  { label: "Dashboard", href: "/dashboard", key: "dashboard" },
   { label: "Proyectos", href: "/projects", key: "projects" },
   { label: "Chats", href: "/chats", key: "chats" },
   { label: "Analítica", href: "/analytics", key: "analytics" },

@@ -7,10 +7,12 @@ import {
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } },
+  { params }: { params: Promise<{ id: string }> },
 ) {
+  const { id } = await params;
+
   try {
-    const project = await getProjectById(params.id);
+    const project = await getProjectById(id);
     if (!project) {
       return NextResponse.json(
         { error: "Project not found." },
@@ -28,8 +30,9 @@ export async function GET(
 
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } },
+  { params }: { params: Promise<{ id: string }> },
 ) {
+  const { id } = await params;
   const body = await request.json();
   const { estado } = body;
 
@@ -38,7 +41,7 @@ export async function PATCH(
   }
 
   try {
-    const project = await updateProjectStatus(params.id, estado);
+    const project = await updateProjectStatus(id, estado);
     return NextResponse.json(project);
   } catch (error) {
     return NextResponse.json(
@@ -50,10 +53,12 @@ export async function PATCH(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } },
+  { params }: { params: Promise<{ id: string }> },
 ) {
+  const { id } = await params;
+
   try {
-    await deleteProject(params.id);
+    await deleteProject(id);
     return NextResponse.json({ success: true });
   } catch (error) {
     return NextResponse.json(

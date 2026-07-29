@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { PageTransition } from "../components/PageTransition";
 
 export const metadata: Metadata = {
   title: "Finitum",
@@ -15,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="min-h-screen bg-bg text-text antialiased">
-        {children}
+        <PageTransition>{children}</PageTransition>
       </body>
     </html>
   );
